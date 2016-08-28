@@ -155,7 +155,7 @@ function scramble($syllables, $input, \Language\language $language) {
 
   if (!isset($debug)) {
     //If the input has already been translated
-    $row = $db->findTranslation($language->getKey(), strtolower($input));
+    $row = $db->findTranslation($language->getKey(), $input);
     if ($row != false) {
       return $row['output'];
     }
@@ -174,7 +174,7 @@ function scramble($syllables, $input, \Language\language $language) {
       $count++;
     }
 
-    $db->insertScramble($language->getKey(), strtolower($input), $scram);
+    $db->insertScramble($language->getKey(), $input, $scram);
   } else {
     return generateScramble($syllables, $input, $language);
   }

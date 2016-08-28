@@ -89,7 +89,7 @@ class handle {
 
   public function findTranslation($langkey, $input) {
     $row = $this->query("
-      SELECT *
+      SELECT *, LCASE(input)
       FROM lang
       WHERE
         input = :input
@@ -98,7 +98,7 @@ class handle {
       LIMIT 1
       ",
       array(
-        ":input" => $input,
+        ":input" => strtolower($input),
         ":lkey" => $langkey
       )
     );
@@ -112,14 +112,14 @@ class handle {
 
   public function findTranslationByText($output) {
     $row = $this->query("
-      SELECT *
+      SELECT *, LCASE(output)
       FROM lang
       WHERE
         output = :output
       LIMIT 1
       ",
       array(
-        ":output" => $output
+        ":output" => strtolower($output)
       )
     );
 
