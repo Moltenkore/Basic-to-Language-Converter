@@ -219,7 +219,7 @@ function getReverseLanguageTranslation() {
   global $db;
   global $lang;
 
-  $result = $db->findTranslationByText($_POST['textarea2']);
+  $result = $db->findTranslationByText(rtrim($_POST['textarea2']));
   if ($result) {
     $l = $lang->get($result['lkey']);
     echo
