@@ -1,5 +1,6 @@
 # Basic to Language Converter
 Website can be found here: http://mk.darkserver.co.uk/lang/
+
 Aurora Station can be found here: https://aurorastation.org/
 
 ## SQL
@@ -16,3 +17,9 @@ CREATE TABLE IF NOT EXISTS lang (
   PRIMARY KEY (id)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
 ```
+
+##TODO
+- Change it from 'phrase by phrase' to 'word by word'.
+- Optimise database calls and possibly cache responses
+- Convert the form to AJAX
+- Write a mini templating engine to deal with the horrible per-page-system
